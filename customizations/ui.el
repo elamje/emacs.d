@@ -67,3 +67,7 @@
 
 ;; no bell
 (setq ring-bell-function 'ignore)
+
+;; add powerline for emacs
+(require 'powerline)
+(powerline-default-theme)
