@@ -108,6 +108,13 @@
 ;;;;
 ;; Customization
 ;;;;
+;; Save emacs state to refresh on emacs open
+(desktop-save-mode 1)
+(setq history-length 250)
+(add-to-list 'desktop-globals-to-save 'file-name-history)
+
+;; Open shell in current buffer
+(push (cons "\\*shell\\*" display-buffer--same-window-action) display-buffer-alist)
 
 ;; Add a directory to our load path so that when you `load` things
 ;; below, Emacs knows where to look for the corresponding file.
@@ -143,9 +150,13 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(coffee-tab-width 2)
+ '(custom-enabled-themes (quote (tomorrow-night-eighties)))
+ '(custom-safe-themes
+   (quote
+    ("9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" "7f1263c969f04a8e58f9441f4ba4d7fb1302243355cb9faecb55aec878a06ee9" "1157a4055504672be1df1232bed784ba575c60ab44d8e6c7b3800ae76b42f8bd" "cf08ae4c26cacce2eebff39d129ea0a21c9d7bf70ea9b945588c1c66392578d1" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" "5ee12d8250b0952deefc88814cf0672327d7ee70b16344372db9460e9a0e3ffc" default)))
  '(package-selected-packages
    (quote
-    (geiser powerline cider-decompile magit tagedit rainbow-delimiters projectile smex ido-completing-read+ cider clojure-mode-extra-font-locking clojure-mode paredit exec-path-from-shell))))
+    (autopair rust-mode company geiser powerline cider-decompile magit tagedit rainbow-delimiters projectile smex ido-completing-read+ cider clojure-mode-extra-font-locking clojure-mode paredit exec-path-from-shell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
