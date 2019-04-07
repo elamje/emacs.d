@@ -15,6 +15,9 @@
 ;; Highlights matching parenthesis
 (show-paren-mode 1)
 
+;; Enable autopair mode, i.e matching parens, paredit mode will override autopair
+(autopair-global-mode 1)
+
 ;; Highlight current line
 (global-hl-line-mode 1)
 
@@ -67,3 +70,7 @@
     (quit nil)))
 
 (setq electric-indent-mode nil)
+
+;; fix javascript indent to 4 spaces
+;; added by john
+(setq js-indent-level 4)
