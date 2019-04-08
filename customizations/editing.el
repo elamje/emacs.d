@@ -74,3 +74,14 @@
 ;; fix javascript indent to 4 spaces
 ;; added by john
 (setq js-indent-level 4)
+
+;; Rust Customization
+
+(setq racer-cmd "~/.cargo/bin/racer")
+(setq racer-rust-src-path "~/rust/src")
+
+(add-hook 'rust-mode-hook #'racer-mode)
+(add-hook 'racer-mode-hook #'eldoc-mode)
+(add-hook 'racer-mode-hook #'company-mode)
+
+
